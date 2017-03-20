@@ -14,16 +14,13 @@ class Family extends React.Component {
 		}
 		this.ageIncrement = this.ageIncrement.bind(this)
 	}
+
 	ageIncrement(familyMember) {
-		let currentFamilyState = this.state
-		let affectedFamilyMember = familyMember.props.name;
-
+		let currentFamilyState = this.state;
+		let familyMemberName = familyMember.props.name;
 		// creating new, updated state object
-		currentFamilyState[affectedFamilyMember].age +=1;
-
-		this.setState({
-			currentFamilyState
-		});
+		currentFamilyState[familyMemberName].age +=1;
+		this.setState(currentFamilyState);
 	}
 
 	render() {
